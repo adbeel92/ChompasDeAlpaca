@@ -13,8 +13,10 @@ class ChompasControl extends CI_Controller{
         $data['msjError'] = $login;
         
         $datos['title']='Chompas de Alpaca';
-        if($user!=null)
+        if($user!=null){
             $datos['nombreCompleto'] = $user->_nombre.' '.$user->_apellido;
+            $datos['rol']=$user->_rol;
+        }
         $datos['username'] = $username;
         
         if($login==' ')

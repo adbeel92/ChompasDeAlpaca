@@ -1,16 +1,15 @@
 body {
-    background: url(../images/fondoLogin.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;        
+    background-color: #3ba;
+    font-family: Calibri,Verdana,Arial;
 }
 h1{
     position: absolute;
-    width: 580px;
+    width: 520px;
     height: 80px;
-    font-family: Verdana,Arial,Helvetica,sans-serif;
     font-size: 50px;
     top:20px;
     left: 100px;
-    padding-left: 20px;
+    padding-left: 80px;
     color:#003333;
     font-style: oblique;
     background-color: #fff;
@@ -38,7 +37,6 @@ h1{
     left:100px;
     top:70px;
     color: white;
-    font-family: Calibri;
     font-size: 25px;
 }
 #loginTabla tr{
@@ -47,4 +45,5 @@ h1{
 #loginTabla #botonIngresar{
     height: 40px;
     width: 150px;
+    font-size: 20px;
 }

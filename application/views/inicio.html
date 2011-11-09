@@ -13,7 +13,11 @@
     <body>
         <div id="container">
             <h1>Chompas de Alpaca</h1>
-            
+            <h2><?php echo $nombreCompleto;?></h2>
+            <p class="adm"><?php echo $rol;?></p>
+            <form method="post" action="index.php?c=ChompasControl&m=logout">
+                <input id="botonLogout" type="submit" value="Salir"/>
+            </form>
 	</div>
     </body>
 </html>
