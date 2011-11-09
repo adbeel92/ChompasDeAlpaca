@@ -1,5 +1,4 @@
 <?php
-
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
@@ -27,7 +26,6 @@
  * Different environments will require different levels of error reporting.
  * By default development will show errors but testing and live will hide them.
  */
-
 if (defined('ENVIRONMENT'))
 {
 	switch (ENVIRONMENT)
@@ -121,13 +119,9 @@ if (defined('ENVIRONMENT'))
  *
  */
 	// $assign_to_config['name_of_config_item'] = 'value of config item';
-
-
-
 // --------------------------------------------------------------------
 // END OF USER CONFIGURABLE SETTINGS.  DO NOT EDIT BELOW THIS LINE
 // --------------------------------------------------------------------
-
 /*
  * ---------------------------------------------------------------
  *  Resolve the system path for increased reliability
@@ -153,7 +147,6 @@ if (defined('ENVIRONMENT'))
 	{
 		exit("Your system folder path does not appear to be set correctly. Please open the following file and correct this: ".pathinfo(__FILE__, PATHINFO_BASENAME));
 	}
-
 /*
  * -------------------------------------------------------------------
  *  Now that we know the path, set the main path constants
