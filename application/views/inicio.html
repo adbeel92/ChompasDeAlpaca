@@ -18,6 +18,29 @@
             <form method="post" action="index.php?c=ChompasControl&m=logout">
                 <input id="botonLogout" type="submit" value="Salir"/>
             </form>
+            
+            <div id="opciones">
+                <div id="left">
+                    <form method="post" action="index.php?c=ChompasControl&m=verChompas">
+                        <input type="hidden" name="nombreCompleto" value="<?php echo $nombreCompleto;?>" />
+                        <input type="hidden" name="adm_id" value="<?php echo $adm_id;?>" />
+                        <input type="hidden" name="rol" value="<?php echo $rol;?>" />
+                        <p>Ver Stock y Cantidades de Chompas</p>
+                        <input class="botonVer" type="submit" value="Ver Chompas"/>
+                    </form>
+                    <form method="post" action="index.php?c=ChompasControl&m=verPedidos">
+                        <input type="hidden" name="nombreCompleto" value="<?php echo $nombreCompleto;?>" />
+                        <input type="hidden" name="adm_id" value="<?php echo $adm_id;?>" />
+                        <input type="hidden" name="rol" value="<?php echo $rol;?>" />
+                        <p>Lista de Pedidos Realizados</p>
+                        <input class="botonVer" type="submit" value="Ver Pedidos"/>
+                    </form>
+                </div>
+                
+                <div id="main">
+                    <h3>----</h3>
+                </div>
+            </div>
 	</div>
     </body>
 </html>
