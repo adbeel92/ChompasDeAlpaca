@@ -1,0 +1,50 @@
+body {
+    background: url(../images/fondoLogin.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;        
+}
+h1{
+    position: absolute;
+    width: 580px;
+    height: 80px;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 50px;
+    top:20px;
+    left: 100px;
+    padding-left: 20px;
+    color:#003333;
+    font-style: oblique;
+    background-color: #fff;
+}
+#container{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100px;;
+    height: 100%;
+}
+
+#login{
+ position: absolute;
+ top:160px;
+ left: 100px;
+ width: 600px;
+ height: 400px;
+ background-color: #003333;
+}
+
+/*log-in--------------------------------------*/
+#loginTabla{
+    position: relative;
+    left:100px;
+    top:70px;
+    color: white;
+    font-family: Calibri;
+    font-size: 25px;
+}
+#loginTabla tr{
+    height: 70px;
+}
+#loginTabla #botonIngresar{
+    height: 40px;
+    width: 150px;
+}

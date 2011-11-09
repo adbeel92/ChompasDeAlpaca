@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+		<title><?php echo $title;?></title>
+                
+                <link href="http://localhost/ChompasDeAlpaca/css/login.css" rel="stylesheet" type="text/css" />
+                
+                <link type="text/css" href="http://localhost/ChompasDeAlpaca/css/jquery-ui-1.7.3.custom.css" rel="stylesheet" />	
+		<script type="text/javascript" src="http://localhost/ChompasDeAlpaca/js/jquery-1.3.2.min.js"></script>
+		<script type="text/javascript" src="http://localhost/ChompasDeAlpaca/js/jquery-ui-1.7.3.custom.min.js"></script>
+                
+    </head>
+    <body>
+        <div id="container">
+            <h1>Chompas de Alpaca</h1>
+            <div id="login">
+                <form method="post" id="signin" action="index.php?c=ChompasControl&m=login">
+                    <table id="loginTabla">
+                        <tr>
+                            <td><label for="username">Usuario</label></td>
+                            <td><input id="username" name="username" value="" title="username" tabindex="4" type="text"/></td>
+                        </tr>
+                        <tr>
+                            <td><label for="password">Contraseña</label></td>
+                            <td><input id="password" name="password" value=""  title="password" tabindex="5" type="password"/></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center"><input id="botonIngresar" value="Ingresar" tabindex="6" type="submit"/></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left"><?php echo $msjError;?></td>
+                        </tr>
+                    </table>                  
+                </form>
+            </div>
+	</div>
+    </body>
+</html>

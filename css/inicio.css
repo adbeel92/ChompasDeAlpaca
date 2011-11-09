@@ -1,0 +1,813 @@
+body {
+    background: url(../Imagenes/background2.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-color: #B45F04   ;
+}
+
+#container{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+#logosc2{
+    position: absolute;
+    top:-10px;
+    left: 900px;
+}
+
+li a{
+    text-align: center;
+}
+
+#tabs{
+    position: absolute;
+    top:250px;
+    left: 500px;
+    width: 1500px;
+    height: 850px;
+}
+
+
+#tabs .ui-tabs-nav {
+	height: 2.35em;
+        background-color: #B45F04;
+	text-align: center;
+}
+#tabs .ui-tabs-nav li {
+	display: inline-block;
+	float: none;
+	margin: 0em;
+        
+}
+
+#tabs .ui-tabs-panel{
+    background-color: #F7D358;
+    color: white;
+    font-family: Calibri;
+    font-size: 25px;
+}
+
+
+#footer{
+    position: absolute;
+    top: 1000px;
+}
+#blizzard{
+    position:relative;
+    left: 500px;
+    top: 140px;
+}
+
+#wcg{
+    position:relative;
+    left: 1850px;
+    top: -50px;
+}
+
+#footerp{
+    position: relative;
+    color: #979896;
+    font-size: 25px;
+    top: 50px;
+    left: 950px;
+}
+
+#tabs-1 > .ui-tabs-panel {
+        position: relative;
+        left: 5px;
+	padding: 0em;
+        height: 500px;
+        background-color: #3D0A0A;
+        height: 760px;
+        width: 1325px;
+        border: 2px solid white;
+        
+}
+
+#tabs-1 {
+	position: relative;
+	padding-left: 6.5em;
+}
+#tabs-1 .ui-tabs-nav {
+	position: absolute;
+	left: 0.25em;
+	top: 0.25em;
+	bottom: 0.25em;
+	width: 6em;
+	padding: 0.2em 0 0.2em 0.2em;
+        
+}
+#tabs-1 .ui-tabs-nav li {
+	right: 1px;
+	width: 100%;
+	border-right: none;
+	border-bottom-width: 1px !important;
+	border-radius: 4px 0px 0px 4px;
+	-moz-border-radius: 4px 0px 0px 4px;
+	-webkit-border-radius: 4px 0px 0px 4px;
+	overflow: hidden;
+}
+
+#tabs-1 .ui-tabs-nav li a {
+	float: right;
+	width: 100%;
+	text-align: right;
+        color: #BA4908;
+        font-size: 25px;
+        font-weight: bold;
+        
+        
+        
+}
+
+#tabs-1 .ui-tabs-nav li.ui-tabs-selected {
+        background-color: #3D0A0A;
+}
+
+#tabs-1 .ui-tabs-nav li :hover {
+        background-color:  #384D55;
+}
+
+#tabs-1 > div {
+	height: 10em;
+	overflow: auto;
+}
+
+#tabs-2 > .ui-tabs-panel {
+	padding: 0em;
+        height: 500px;
+        background-color: #3D0A0A;
+        height: 760px;
+        width: 1325px;
+        border: 2px solid white;
+}
+
+#tabs-2 {
+	position: relative;
+	padding-left: 6.5em;
+}
+
+#tabs-2 .ui-tabs-nav {
+	position: absolute;
+	left: 0.25em;
+	top: 0.25em;
+	bottom: 0.25em;
+	width: 6em;
+	padding: 0.2em 0 0.2em 0.2em;        
+}
+
+#tabs-2 .ui-tabs-nav li {
+	right: 1px;
+	width: 100%;
+	border-right: none;
+	border-bottom-width: 1px !important;
+	border-radius: 4px 0px 0px 4px;
+	-moz-border-radius: 4px 0px 0px 4px;
+	-webkit-border-radius: 4px 0px 0px 4px;
+	overflow: hidden;
+}
+
+#tabs-2 .ui-tabs-nav li a {
+	float: left;
+	
+	text-align: center;
+        color: #BA4908;
+        font-size: 25px;
+        font-weight: bold;        
+}
+
+#tabs-2 .ui-tabs-nav li.ui-tabs-selected {
+        background-color: #3D0A0A;
+}
+
+
+#tabs-2 .ui-tabs-nav li :hover {
+        background-color:  #384D55;
+}
+
+#tabs-2 > div {
+	height: 10em;
+	overflow: auto;
+}
+
+#tabs-3 > .ui-tabs-panel {
+	padding: 0em;
+        height: 500px;
+        background-color: #3D0A0A;
+        height: 760px;
+        width: 1325px;
+        border: 2px solid white;
+}
+
+#tabs-3 {
+	position: relative;
+	padding-left: 6.5em;
+}
+#tabs-3 .ui-tabs-nav {
+	position: absolute;
+	left: 0.25em;
+	top: 0.25em;
+	bottom: 0.25em;
+	width: 6em;
+	padding: 0.2em 0 0.2em 0.2em;
+        
+}
+#tabs-3 .ui-tabs-nav li {
+	right: 1px;
+	width: 100%;
+	border-right: none;
+	border-bottom-width: 1px !important;
+	border-radius: 4px 0px 0px 4px;
+	-moz-border-radius: 4px 0px 0px 4px;
+	-webkit-border-radius: 4px 0px 0px 4px;
+	overflow: hidden;
+}
+
+#tabs-3 .ui-tabs-nav li a {
+	float: right;
+	width: 100%;
+	text-align: right;
+        color: #BA4908;
+        font-size: 25px;
+        font-weight: bold;
+        
+        
+        
+}
+
+#tabs-3 .ui-tabs-nav li.ui-tabs-selected {
+        background-color: #3D0A0A;
+}
+
+
+#tabs-3 .ui-tabs-nav li :hover {
+        background-color:  #384D55;
+}
+
+#tabs-3 > div {
+	height: 10em;
+	overflow: auto;
+}
+
+#tabs-4 > .ui-tabs-panel {
+	padding: 0em;
+        height: 500px;
+        background-color: #3D0A0A;
+        height: 760px;
+        width: 1325px;
+        border: 2px solid white;
+}
+
+#tabs-4 {
+	position: relative;
+	padding-left: 6.5em;
+}
+#tabs-4 .ui-tabs-nav {
+	position: absolute;
+	left: 0.25em;
+	top: 0.25em;
+	bottom: 0.25em;
+	width: 6em;
+	padding: 0.2em 0 0.2em 0.2em;
+        
+}
+#tabs-4 .ui-tabs-nav li {
+	right: 1px;
+	width: 100%;
+	border-right: none;
+	border-bottom-width: 1px !important;
+	border-radius: 4px 0px 0px 4px;
+	-moz-border-radius: 4px 0px 0px 4px;
+	-webkit-border-radius: 4px 0px 0px 4px;
+	overflow: hidden;
+}
+
+#tabs-4 .ui-tabs-nav li a {
+	float: right;
+	width: 100%;
+	text-align: right;
+        color: #BA4908;
+        font-size: 25px;
+        font-weight: bold;
+        
+        
+        
+}
+
+#tabs-4 .ui-tabs-nav li.ui-tabs-selected {
+        background-color: #3D0A0A;
+}
+
+
+#tabs-4 .ui-tabs-nav li :hover {
+        background-color:  #384D55;
+}
+
+#tabs-4 > div {
+	height: 10em;
+	overflow: auto;
+}
+
+
+#tabs-5 > .ui-tabs-panel {
+	padding: 0em;
+        height: 500px;
+        background-color: #3D0A0A;
+        height: 760px;
+        width: 1325px;
+        border: 2px solid white;
+}
+
+#tabs-5 {
+	position: relative;
+	padding-left: 6.5em;
+}
+#tabs-5 .ui-tabs-nav {
+	position: absolute;
+	left: 0.25em;
+	top: 0.25em;
+	bottom: 0.25em;
+	width: 6em;
+	padding: 0.2em 0 0.2em 0.2em;
+        
+}
+#tabs-5 .ui-tabs-nav li {
+	right: 1px;
+	width: 100%;
+	border-right: none;
+	border-bottom-width: 1px !important;
+	border-radius: 4px 0px 0px 4px;
+	-moz-border-radius: 4px 0px 0px 4px;
+	-webkit-border-radius: 4px 0px 0px 4px;
+	overflow: hidden;
+}
+
+#tabs-5 .ui-tabs-nav li a {
+	float: right;
+	width: 100%;
+	text-align: right;
+        color: #BA4908;
+        font-size: 25px;
+        font-weight: bold;
+        
+        
+        
+}
+
+#tabs-5 .ui-tabs-nav li.ui-tabs-selected {
+        background-color: #3D0A0A;
+}
+
+
+#tabs-5 .ui-tabs-nav li :hover {
+        background-color:  #384D55;
+}
+
+#tabs-5 > div {
+	height: 10em;
+	overflow: auto;
+}
+
+#tabs-one-line{
+    width: 110px;
+    position: absolute;
+    top:205px;
+    left: 1890px;
+}
+
+#tabs-one-line ul {
+	width: 100px;
+}
+
+#tabs-one-line > .ui-tabs-panel{
+    width: 100px;
+}
+
+#descripcion{
+    width: 400px;
+    height: 300px;
+}
+
+/*Crear Torneos-------------------------------------------*/
+#crearTorneoTabla2{
+    position: absolute;
+    top: 100px;
+    margin-left: 640px;
+}
+#crearTorneoTabla2 td{
+    padding: 15px;
+}
+#crearTorneoTabla2 td input:hover{
+    background-color: #ffa;
+}
+#crearTorneoTabla{
+    position: relative;
+    margin-left: 10px;
+}
+#crearTorneoTabla td{
+    height: 70px;
+}
+#crearTorneoTabla td input:hover{
+    background-color: #ffa;
+}
+#crearTorneoTabla .labels{
+    width: 250px;
+}
+#crearTorneoTabla .nombreTorneo{
+    width: 200px;
+}
+#fechaInicio1{
+    width: 160px;
+}
+#fechaFin1{
+    width: 160px;
+}
+#scrollTabla{
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    overflow: auto;
+    left:130px;
+    border: white solid 1px;
+}
+.botonRegistrar{
+    position: relative;
+    top: 70px;
+    left:600px;
+}
+.botonRestablecer{
+    position: relative;
+    top: 70px;
+    left:680px;
+}
+.botonModificar{
+    position: relative;
+    top: 70px;
+    left:600px;
+}
+.botonCancelar{
+    position: relative;
+    top: 70px;
+    left:680px;
+}
+#nroEquiposDisabled{
+    width: 50px;
+}
+#estadoDisabled{
+    width: 160px;
+}
+/*Ver Torneos-------------------------------------------*/
+#verTorneoTabla{
+    position: relative;
+    top:35px;
+    margin-left:10px;
+}
+#verTorneoTabla td{
+    border-top: white solid 1px;
+    border-left: white solid 1px;
+}
+#verTorneoTabla .primFila{
+    width: 155px;
+    background-color: #ccddcc;
+    color:#3D0A0A;
+}
+#verTorneoTabla .buttonModificar{
+    width: 120px;
+    font-size: 17px;
+}
+#verTorneoTabla .buttonEliminar{
+    width: 120px;
+    font-size: 17px;
+}
+#verTorneoTabla a{
+    color: #fff;
+}
+#verTorneoTabla a:hover{
+    font-family: Sans-serif;
+}
+/*----Modifar Torneo----------------*/
+#modTorneoTabla2{
+    position: absolute;
+    top: 100px;
+    margin-left: 640px;
+}
+#modTorneoTabla2 td{
+    width:700px;
+    padding: 15px;
+}
+#modTorneoTabla{
+    position: relative;
+    margin-left: 10px;
+}
+#modTorneoTabla td{
+    height: 70px;
+}
+#modTorneoTabla .labels{
+    width: 250px;
+}
+#modTorneoTabla .nombreTorneo{
+    width: 200px;
+}
+#modTorneoTabla .fecha{
+    width: 160px;
+}
+#modTorneoTabla td input{
+    color: gray;
+}
+#modTorneoTabla td input:hover{
+    color: #000;
+    background-color: #ffa;
+}
+#modTorneoTabla td select{
+    color: gray;
+}
+#modTorneoTabla td select:hover{
+    color: #000;
+    background-color: #ffa;
+}
+#modTorneoTabla td select option:hover{
+    color: #000;
+    background-color: #ffa;
+}
+#modTorneoTabla2 input{
+    color: gray;
+}
+#modTorneoTabla2 input:hover{
+    color: #000;
+    background-color: #ffa;
+}
+#fechaInicio2{
+    width: 160px;
+}
+#fechaFin2{
+    width: 160px;
+}
+/*----ver Detalles Torneo----*/
+#verDetallesTorneoTabla{
+    position: relative;
+    top:35px;
+    margin-left:10px;
+}
+#verDetallesTorneoTabla td{
+    border-top: white solid 1px;
+    border-left: white solid 1px;
+}
+#verDetallesTorneoTabla .primCol{
+    width: 155px;
+    background-color: #ccddcc;
+    color:#3D0A0A;
+}
+
+#verdetalles h2{
+    position: absolute;
+    top:140px;
+    margin-left:540px;
+}
+#equiposParticipantes{
+    position: absolute;
+    width: 600px;
+    height: 500px;
+    top:250px;
+    left: 780px;
+    overflow:auto;
+}
+#verEquiposPorTorneoTabla{
+    position: relative;
+}
+#verEquiposPorTorneoTabla td{
+    border-top: white solid 1px;
+    border-left: white solid 1px;
+}
+#verEquiposPorTorneoTabla .primFila{
+    width: 155px;
+    background-color: #ccddcc;
+    color:#3D0A0A;
+}
+/*Registrar Resultado-------------------------------------------*/
+
+
+
+#tabs #tabs-3 #rresultado #tableResultado {
+	margin-left: 200px;
+}
+
+#tabs #tabs-4 #rhorario #tableHorario {
+	margin-left: 200px;
+}
+#tabs #tabs-4 #rhorario #tableHorario tr td #horarioFase {
+	margin-left: 120px;
+}
+#tabs #tabs-5 #rreplay #tableReplay {
+	margin-left: 200px;
+}
+#tabs #tabs-5 #rreplay #tableReplay tr td #ReplayFase {
+	padding-left: 100px;
+}
+#upload_area {
+	border-bottom: 1px solid #bbbbbb;
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+        right: 100px;
+        float: right;
+}
+#upload_area2 {
+	border-bottom: 1px solid #bbbbbb;
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+        right: 100px;
+        float: right;
+}
+/*Modificar Resultado-------------------------------------------*/
+#mresultadoTabla{
+    position: relative;
+    top:35px;
+    margin-left:10px;
+}
+#mresultadoTabla td{
+    border-top: white solid 1px;
+    border-left: white solid 1px;
+}
+#mresultadoTabla .primCol{
+    width: 500px;
+    background-color: #ccddcc;
+    color:#3D0A0A;
+}
+#mresultadoTabla .primFila{
+    width: 150px;
+    background-color: #ccddcc;
+    color:#3D0A0A;
+}
+#mresultadoTabla .buttonModificar{
+    width: 120px;
+    font-size: 17px;
+}
+#tableResultado .botonRegistrar{
+    left:30px;
+}
+#tableResultado .botonRestablecer{
+    left:60px;
+}
+#tableResultado .botonModificar{
+    left:30px;
+}
+#tableResultado .botonCancelar{
+    left:60px;
+}
+/*Modificar Horario-------------------------------------------*/
+#modHorarioTable{
+    position: relative;
+    top:35px;
+    margin-left:10px;
+}
+#modHorarioTable td{
+    border-top: white solid 1px;
+    border-left: white solid 1px;
+}
+#modHorarioTable .segCol{
+    width: 500px;
+    background-color: #ccddcc;
+    color:#3D0A0A;
+}
+#modHorarioTable .primFila{
+    width: 155px;
+    background-color: #ccddcc;
+    color:#3D0A0A;
+}
+#modHorarioTable .buttonModificar{
+    width: 120px;
+    font-size: 17px;
+}
+#tableHorario .botonRegistrar{
+    left:30px;
+}
+#tableHorario .botonRestablecer{
+    left:60px;
+}
+#tableHorario .botonModificar{
+    left:30px;
+}
+#tableHorario .botonCancelar{
+    left:60px;
+}
+/*Modificar Replay-------------------------------------------*/
+#modReplayTable{
+    position: relative;
+    top:35px;
+    margin-left:10px;
+}
+#modReplayTable td{
+    border-top: white solid 1px;
+    border-left: white solid 1px;
+}
+#modReplayTable .primCol{
+    width: 500px;
+    background-color: #ccddcc;
+    color:#3D0A0A;
+}
+#modReplayTable .primFila{
+    width: 200px;
+    background-color: #ccddcc;
+    color:#3D0A0A;
+}
+#modReplayTable .buttonModificar{
+    width: 120px;
+    font-size: 17px;
+}
+#tableReplay .botonRegistrar{
+    left:30px;
+}
+#tableReplay .botonRestablecer{
+    left:60px;
+}
+#tableReplay .botonModificar{
+    left:30px;
+}
+#tableReplay .botonCancelar{
+    left:60px;
+}
+/*-------------------------------------------*/
+
+/*agregar noticia-----------------------------------*/
+#agregarNoticiaTabla{
+    position: relative;
+    margin-left: 10px;
+}
+#agregarNoticiaTabla tr{
+    height: 90px;
+}
+#agregarNoticiaTabla .up{
+    margin-top:0px;
+}
+/*Modificar Eliminar Noticia---------------------------*/
+#modEliNoticiaTabla th{
+    width: 250px;
+}
+#modEliNoticiaTabla #modificar{
+    font-size: 18px;
+}
+#modEliNoticiaTabla #eliminar{
+    font-size: 18px;
+}
+
+/*ultimas noticias -----------------------------------------*/
+#ultimasNotiTabla{
+    position: relative;
+    margin-left:200px;
+    width: 600px;
+}
+#ultimasNotiTabla th{
+    width: 350px;
+    border-top: 1px solid white;
+    border-left:1px solid white;
+}
+#ultimasNotiTabla .ultCol{
+    width: 10px;
+}
+#ultimasNotiTabla td{
+    border-top: 1px solid white;
+    border-left:1px solid white;
+}
+.botonSelect{
+    position: relative;
+    margin-left:480px;
+}
+/*seleccionar ultimas noticias*/
+#selecEquiposTabla{
+    position: relative;
+    margin-left:200px;
+    width: 600px;
+}
+#selecEquiposTabla th{
+    width: 350px;
+    border-top: 1px solid white;
+    border-left:1px solid white;
+}
+#selecEquiposTabla .ultCol{
+    width: 10px;
+}
+#selecEquiposTabla td{
+    border-top: 1px solid white;
+    border-left:1px solid white;
+}
+.botonSelect{
+    position: relative;
+    margin-left:480px;
+}
+
+#userP{
+    font-size:36px ;
+    color: white;
+    position:absolute;
+    left: 535px;
+    top: 150px;
+    font-family: Geneva,Arial,Helvetica,sans-serif;
+    font-style: inherit;
+}
+
+
