@@ -18,7 +18,7 @@
             <form method="post" action="index.php?c=LoginControl&m=logout">
                 <input id="botonLogout" type="submit" value="Salir"/>
             </form>
-            
+
             <div id="opciones">
                 <div id="left">
                     <form method="post" action="index.php?c=ChompasControl&m=verChompas">
@@ -36,35 +36,11 @@
                         <input class="botonVer" type="submit" value="Ver Pedidos"/>
                     </form>
                 </div>
-                
+
                 <div id="main">
-                    <h3>Chompas</h3>
-                    <table id="chompasCarritoTabla">  
-                      <tr>  
-                          <th>Código</th>  
-                          <th>Nombre</th>  
-                          <th>Cantidad</th>
-                      </tr>  
-                    <?php foreach ($chompasCarrito as $item) { ?>  
-                     <tr>  
-                          <td><?php echo $item->getId(); ?></td>  
-                          <td><?php echo $item->getNombre(); ?></td>  
-                          <td>
-                              <form method="post" action="index.php?c=ChompasControl&m=add">
-                                <input type="hidden" name="nombreCompleto" value="<?php echo $nombreCompleto;?>" />
-                                <input type="hidden" name="adm_id" value="<?php echo $adm_id;?>" />
-                                <input type="hidden" name="rol" value="<?php echo $rol;?>" />
-                                <input id="inputQty" type="text" name="qty" />
-                                <input type="hidden" name="idChompaCarrito" value="<?php echo $item->getId();?>"/>
-                                <input id="botonAddCarrito" type="image" src="http://localhost/ChompasDeAlpaca/images/carrito.png" value="Añadir al Carrito"/>
-                              </form>
-                          </td>
-                      </tr>
-                    <?php } ?>  
-                    </table>
-                    <p><?php echo $mensaje;?></p>
+                    <h3>Realizar Pedido</h3>
+                    
                 </div>
-            </div>
 	</div>
     </body>
 </html>

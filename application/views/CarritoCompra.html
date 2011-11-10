@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+		<title><?php echo $title;?></title>
+                
+                <link href="http://localhost/ChompasDeAlpaca/css/inicio.css" rel="stylesheet" type="text/css" />
+                
+                <link type="text/css" href="http://localhost/ChompasDeAlpaca/css/jquery-ui-1.7.3.custom.css" rel="stylesheet" />	
+		<script type="text/javascript" src="http://localhost/ChompasDeAlpaca/js/jquery-1.3.2.min.js"></script>
+		<script type="text/javascript" src="http://localhost/ChompasDeAlpaca/js/jquery-ui-1.7.3.custom.min.js"></script>
+                
+    </head>
+    <body>
+        <div id="container">
+            <h1>Chompas de Alpaca</h1>
+            <h2><?php echo $nombreCompleto;?></h2>
+            <p class="adm"><?php echo $rol;?></p>
+            <form method="post" action="index.php?c=LoginControl&m=logout">
+                <input id="botonLogout" type="submit" value="Salir"/>
+            </form>
+            
+            <div id="opciones">
+                <div id="left">
+                    <form method="post" action="index.php?c=ChompasControl&m=verChompas">
+                        <input type="hidden" name="nombreCompleto" value="<?php echo $nombreCompleto;?>" />
+                        <input type="hidden" name="adm_id" value="<?php echo $adm_id;?>" />
+                        <input type="hidden" name="rol" value="<?php echo $rol;?>" />
+                        <p>Ver Stock y Cantidades de Chompas</p>
+                        <input class="botonVer" type="submit" value="Ver Chompas"/>
+                    </form>
+                    <form method="post" action="index.php?c=ChompasControl&m=verPedidos">
+                        <input type="hidden" name="nombreCompleto" value="<?php echo $nombreCompleto;?>" />
+                        <input type="hidden" name="adm_id" value="<?php echo $adm_id;?>" />
+                        <input type="hidden" name="rol" value="<?php echo $rol;?>" />
+                        <p>Lista de Pedidos Realizados</p>
+                        <input class="botonVer" type="submit" value="Ver Pedidos"/>
+                    </form>
+                </div>
+                <div id="main">
+                    <h3>Chompas a Comprar - Carrito</h3>
+                    <table id="carritoTabla">  
+                        <tr>
+                            <th>Chompa</th>
+                            <th>Precio</th>
+                            <th>Qty</th>
+                            <th>Subtotal</th>
+                        </tr>	
+                        <?php foreach($cart as $chompa) {?>
+                        <tr>
+                            <td><?php echo $chompa['name'] ?></td>
+                            <td align="right">$<?php echo $chompa['price'] ?></td>
+                            <td align="center"><?php echo $chompa['qty'] ?></td>
+                            <td align="right"><?php echo $chompa['subtotal'] ?></td>
+                            <td align="center" class="tdRetirarCarrito">
+                                <form method="post" action="index.php?c=ChompasControl&m=updateCart">
+                                    <input type="hidden" name="rowId" value="<?php echo $chompa['id'] ?>"/>
+                                    <input type="hidden" name="nombreCompleto" value="<?php echo $nombreCompleto;?>" />
+                                    <input type="hidden" name="adm_id" value="<?php echo $adm_id;?>" />
+                                    <input type="hidden" name="rol" value="<?php echo $rol;?>" />
+                                    <input id="botonRetirarCarrito" type="image" src="http://localhost/ChompasDeAlpaca/images/boton_quitar_carrito.jpg" value="Retirar del Carrito"/>
+                                </form>
+                            </td>
+                        </tr>
+                        <?php } ?>		
+                        <tr>
+                            <td colspan="3">Total</td>
+                            <td align="right"><?php echo $this->cart->total(); ?></td>
+                        </tr>
+                    </table>
+                    <form method="Post" action="index.php?c=ChompasControl&m=volver">
+                        <input type="hidden" name="nombreCompleto" value="<?php echo $nombreCompleto;?>" />
+                        <input type="hidden" name="adm_id" value="<?php echo $adm_id;?>" />
+                        <input type="hidden" name="rol" value="<?php echo $rol;?>" />
+                        <input id="botonSeguirComprando" type="image" src="http://localhost/ChompasDeAlpaca/images/boton_seguir_comprando.jpg" value="Seguir Comprando"/>
+                    </form>
+                    <form method="Post" action="index.php?c=ChompasControl&m=destroy">
+                        <input type="hidden" name="nombreCompleto" value="<?php echo $nombreCompleto;?>" />
+                        <input type="hidden" name="adm_id" value="<?php echo $adm_id;?>" />
+                        <input type="hidden" name="rol" value="<?php echo $rol;?>" />
+                        <input id="botonVaciarCarrito" type="image" src="http://localhost/ChompasDeAlpaca/images/boton-vaciar-carrito.jpg" value="Cancelar la Compra"/>
+                    </form>
+                    <form method="Post" action="index.php?c=ChompasControl&m=comprar">
+                        <input type="hidden" name="nombreCompleto" value="<?php echo $nombreCompleto;?>" />
+                        <input type="hidden" name="adm_id" value="<?php echo $adm_id;?>" />
+                        <input type="hidden" name="rol" value="<?php echo $rol;?>" />
+                        <input id="botonComprar" type="image" src="http://localhost/ChompasDeAlpaca/images/boton-comprar.png" value="Comprar"/>
+                    </form>
+                </div>
+            </div>
+	</div>
+    </body>
+</html>

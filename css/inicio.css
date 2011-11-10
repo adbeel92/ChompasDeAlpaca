@@ -1,30 +1,35 @@
 body {
-    background-color: #3ba;
-    font-family: Calibri,Verdana,Arial;
+    background-color: #3F0B1B;
+    font-family: Georgia,'Times New Roman',times,serif;
     font-size: 14px;
+    color:#fff;
 }
 h1{
     position: absolute;
-    width: 520px;
+    width: 580px;
     height: 80px;
     font-size: 50px;
-    top:20px;
+    top:10px;
     left: 100px;
-    padding-left: 80px;
+    padding-left: 60px;
     color:#003333;
     font-style: oblique;
     background-color: #fff;
 }
 h2{
     position: absolute;
-    width: 590px;
-    height: 23px;
-    top: 119px;
+    width: 630px;
+    height: 25px;
+    top: 109px;
     left: 100px;
     padding-left: 10px;
     color: #fff;
     font-size: 18px;
     background-color: #003333;
+}
+h3{
+    font-size: 17px;
+    margin-left: 15px;
 }
 #container{
     position: absolute;
@@ -35,17 +40,194 @@ h2{
 }
 .adm{
     position: absolute;
-    top: 90px;
+    top: 80px;
     left: 110px;
     color: #003333;
     font-size: 18px;
 }
 #botonLogout{
     position: absolute;
-    top: 95px;
-    left: 600px;
+    top: 120px;
+    left: 652px;
     width: 90px;
     color: #003333;
     font-size: 18px;
+    background-color:#ccffff;
 }
-
+#opciones{
+    position: absolute;
+    top:155px;
+    left: 100;
+    width: 640px;
+    height: 450px;
+    background-color: #fff;
+}
+#opciones .botonVer{
+    background-color: #ccffff;
+    color:#003333;
+    width: 95px;
+}
+#opciones .botonVer:hover{
+    color:#fff;
+    background-color: #003333;
+}
+#left{
+    position: relative;
+    top:7px;
+    left: 7px;
+    width: 100px;
+    height: 180px;
+    background-color: #006666;
+    font-size: 10px;
+    padding-left: 5px;
+    padding-top: 5px;
+    color: white;
+}
+#main{
+    position: absolute;
+    top:7px;
+    left: 120px;
+    width: 507px;
+    height: 430px;
+    background-color: #003333;
+    padding-left: 5px;
+    padding-top: 5px;
+    overflow: auto;
+}
+#chompasCarritoTabla{
+    font-size: 12px;
+    color: white;
+    padding: 0px;
+    margin-left: 40px;
+}
+#chompasCarritoTabla th{
+    color: #003333;
+    background-color: #fff;
+    height: 25px;
+}
+#chompasCarritoTabla td{
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    padding: 0px;
+    margin: 0px;
+}
+#chompasCarritoTabla #inputQty{
+    width: 44px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+#botonAddCarrito{
+    position: absolute;
+    padding-left: 8px;
+    width: 30px;
+    height: 30px;
+}
+#carritoTabla{
+    font-size: 12px;
+    color: white;
+    padding: 0px;
+    margin-left: 40px;
+}
+#carritoTabla th{
+    color: #003333;
+    background-color: #fff;
+    height: 25px;
+}
+#carritoTabla td{
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    padding: 0px;
+    margin: 0px;
+}
+#carritoTabla .tdRetirarCarrito{
+    border: none;
+}
+#listadoChompa{
+    font-size: 12px;
+    color: white;
+    padding: 0px;
+    margin-left: 40px;
+}
+#listadoChompa th{
+    color: #003333;
+    background-color: #fff;
+    height: 25px;
+}
+#listadoChompa td{
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    padding: 0px;
+    margin: 0px;
+}
+#listadoPedido{
+    font-size: 12px;
+    color: white;
+    padding: 0px;
+    margin-left: 40px;
+}
+#listadoPedido th{
+    color: #003333;
+    background-color: #fff;
+    height: 25px;
+}
+#listadoPedido td{
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    padding: 0px;
+    margin: 0px;
+}
+#botonSeguirComprando{
+    position: relative;
+    width: 90px;
+    height: 25px;
+    margin-top:10px;
+    margin-left:5px;
+}
+#botonSeguirComprando:hover{
+    margin-left:0px;
+    margin-top:8px;
+    width: 100px;
+    height: 30px;
+}
+#botonVolver{
+    width: 75px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#botonVolver:hover{
+    margin-left: 4px;
+}
+#botonRetirarCarrito{
+    position: relative;
+    padding-left: 5px;
+    padding-top: 7px;
+    width: 20px;
+    height: 20px;
+}
+#botonComprar{
+    position: absolute;
+    width: 105px;
+    height: 35px;
+    top:40px;
+    left: 345px;
+}
+#botonComprar:hover{
+    width: 115px;
+    height: 43px;
+    top:36px;
+    left: 340px;
+}
+#botonVaciarCarrito{
+    position: absolute;
+    width: 95px;
+    height: 20px;
+    top:80px;
+    left: 350px;
+}
+#botonVaciarCarrito:hover{
+    width: 99px;
+    height: 22px;
+    top:78px;
+    left: 349px;
+}

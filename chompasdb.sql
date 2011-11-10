@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.9
+-- version 3.2.0.1
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 09-11-2011 a las 02:30:39
--- Versión del servidor: 5.5.8
--- Versión de PHP: 5.3.5
+-- Tiempo de generación: 09-11-2011 a las 18:00:22
+-- Versión del servidor: 5.1.37
+-- Versión de PHP: 5.3.0
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -31,7 +31,9 @@ CREATE TABLE IF NOT EXISTS `chompas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_insumo` int(11) NOT NULL,
   `nombre` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
-  `stock` int(10) NOT NULL,
+  `precio` decimal(10,0) NOT NULL,
+  `stock_min` int(10) NOT NULL,
+  `stock_actual` int(11) NOT NULL,
   `unidades_pedido` int(3) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_insumo` (`id_insumo`)
@@ -41,13 +43,13 @@ CREATE TABLE IF NOT EXISTS `chompas` (
 -- Volcar la base de datos para la tabla `chompas`
 --
 
-INSERT INTO `chompas` (`id`, `id_insumo`, `nombre`, `stock`, `unidades_pedido`) VALUES
-(1, 1, 'office', 100, 200),
-(2, 2, 'mid season', 80, 100),
-(3, 1, 'holmes', 80, 100),
-(4, 3, 'gigardo', 120, 180),
-(5, 1, 'anton', 100, 150),
-(6, 3, 'l''blanc', 150, 200);
+INSERT INTO `chompas` (`id`, `id_insumo`, `nombre`, `precio`, `stock_min`, `stock_actual`, `unidades_pedido`) VALUES
+(1, 1, 'office', '100', 100, 100, 200),
+(2, 2, 'mid season', '120', 80, 80, 100),
+(3, 1, 'holmes', '120', 80, 80, 100),
+(4, 3, 'gigardo', '100', 120, 120, 180),
+(5, 1, 'anton', '110', 100, 100, 150),
+(6, 3, 'l''blanc', '100', 150, 150, 200);
 
 -- --------------------------------------------------------
 
@@ -84,12 +86,14 @@ CREATE TABLE IF NOT EXISTS `pedidos` (
   PRIMARY KEY (`id`),
   KEY `id_insumo` (`id_insumo`),
   KEY `id_admin` (`id_admin`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=2 ;
 
 --
 -- Volcar la base de datos para la tabla `pedidos`
 --
 
+INSERT INTO `pedidos` (`id`, `id_insumo`, `id_admin`, `fecha`) VALUES
+(1, 1, 1, '2011-11-09 17:27:07');
 
 -- --------------------------------------------------------
 
@@ -131,3 +135,7 @@ ALTER TABLE `chompas`
 ALTER TABLE `pedidos`
   ADD CONSTRAINT `pedidos_ibfk_1` FOREIGN KEY (`id_insumo`) REFERENCES `insumos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `pedidos_ibfk_2` FOREIGN KEY (`id_admin`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
