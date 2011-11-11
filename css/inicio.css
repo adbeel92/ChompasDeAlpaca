@@ -146,7 +146,8 @@ h3{
     font-size: 12px;
     color: white;
     padding: 0px;
-    margin-left: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 #listadoChompa th{
     color: #003333;
@@ -190,6 +191,9 @@ h3{
     height: 30px;
 }
 #botonVolver{
+    position: absolute;
+    top: 340px;
+    left:400px;
     width: 75px;
     height: 30px;
     margin-top: 10px;
@@ -197,6 +201,16 @@ h3{
 }
 #botonVolver:hover{
     margin-left: 4px;
+    
+}
+
+#msjNo{
+    position: absolute;
+    top: 50px;
+    left: 150px;
+    font-family: calibri;
+    font-size: 30px;
+    
 }
 #botonRetirarCarrito{
     position: relative;
@@ -230,4 +244,26 @@ h3{
     height: 22px;
     top:78px;
     left: 349px;
+}
+#tablaPedido{
+    font-size: 12px;
+}
+#tablaPedido td{
+    border: 1px solid white;
+}
+#tablaPedido .primFila{
+    background-color: white;
+    color: #003333;
+    width: 100px;
+}
+.msj{
+    color:red;
+    font-size: 14px;
+}
+#tablaPedido .tdBotonPedir{
+    width: 50px;
+    height: 10px;
+}
+#tablaPedido .tdx{
+    border: none;
 }
