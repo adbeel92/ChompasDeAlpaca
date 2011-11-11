@@ -42,16 +42,14 @@
                     <table id="listadoPedido">
                       <tr>
                           <th>Código</th>
-                          <th>Insumo</th>
+                          <th>Código de Insumo</th>
                           <th>Fecha</th>
-                          <th>Detalle</th>
                       </tr>
                       <?php foreach($pedidos as $item){?>
                       <tr>
                           <td><?php echo $item->getId(); ?></td>
-                          <td><?php echo $item->getInsumo(); ?></td>
+                          <td><?php echo $item->getIdInsumo(); ?></td>
                           <td><?php echo $item->getFecha(); ?></td>
-                          <td><?php echo $item->getDetalle(); ?></td>
                       </tr>
                       <?php }?>
                     </table>
@@ -59,7 +57,7 @@
                         <input type="hidden" name="nombreCompleto" value="<?php echo $nombreCompleto;?>" />
                         <input type="hidden" name="adm_id" value="<?php echo $adm_id;?>" />
                         <input type="hidden" name="rol" value="<?php echo $rol;?>" />
-                        <input id="botonVolver" type="image" src="http://localhost/ChompasDeAlpaca/images/botonVolver.png" value="Volver"/>
+                        <input type="submit" value="Volver"/>
                     </form>
                 </div>
             </div>

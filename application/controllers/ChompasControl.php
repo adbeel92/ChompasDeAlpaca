@@ -11,69 +11,32 @@ class ChompasControl extends CI_Controller{
     function add(){
         $id = $this->input->post('idChompaCarrito');
         $qty= $this->input->post('qty');
+        $chompa = $this->Chompa->getChompa($id);
+        $datosToAdd = array('id'=>$id,
+                           'qty'=>$qty,
+                           'price'=>$chompa->_precio,
+                           'name'=>$chompa->_nombre);
+        $cart=$this->cart->contents();
+        if(count($cart)>0){
+            foreach($cart as $c){//as chompa
+                if($c['id'] == $id){
+                    $d['rowid'] = $id;
+                    $d['qty'] = $qty;
+                    $this->cart->update($d);
+                }
+            }
+            $this->cart->insert($datosToAdd);
+        }
+        $this->cart->insert($datosToAdd);
+
         $datos['nombreCompleto'] = $this->input->post('nombreCompleto');
         $datos['rol']= $this->input->post('rol');
         $datos['adm_id']= $this->input->post('adm_id');
         $datos['title']= 'Chompas de Alpaca';
-        $chompa = $this->Chompa->getChompa($id);
-        print_r($chompa->getStockAct());
-        if($qty != null){
-            $datosToAdd = array('id'=>$id,
-                           'qty'=>$qty,
-                           'price'=>$chompa->_precio,
-                           'name'=>$chompa->_nombre);
-            if($qty <= $chompa->getStockAct()){
-                $cart=$this->cart->contents();
-                if(count($cart)>0){
-                    foreach($cart as $c){//as chompa
-                        if($c['id'] == $id){
-                            $d['rowid'] = $id;
-                            $d['qty'] = $qty;
-                            $this->cart->update($d);
-                        }
-                    }
-                    $this->cart->insert($datosToAdd);
-                }
-                $this->cart->insert($datosToAdd);
-                $datos['mensaje']='';
-            }else{
-                $datos['mensaje']='Ingrese una cantidad menor para agregar al carrito.';
-            }
-            $datos['cart']=$this->cart->contents();
-            $this->load->view('CarritoCompra.html', $datos);
-        }else{
-            $datos['chompasCarrito'] = $this->Chompa->getAll();
-            $datos['mensaje']='Ingrese una cantidad de chompas para agregar al carrito.';
-            $this->load->view('inicio.html', $datos);
-        }
-
-        
-        
-    }
-    function updateCart(){  
-        $rowid = $this->input->post('rowId');
-        $data['rowid'] = $rowid;
-        $data['qty'] = 0;
-        $this->cart->update($data);
-        
         $datos['cart']=$this->cart->contents();
-        $datos['nombreCompleto'] = $this->input->post('nombreCompleto');
-        $datos['rol']= $this->input->post('rol');
-        $datos['adm_id']= $this->input->post('adm_id');
-        $data['title']= 'Chompas de Alpaca';
-        $this->load->view('CarritoCompra.html', $datos);
-    }
-    function destroy(){  
-        $this->cart->destroy();  
+        $this->load->view('CarritoCompra.html', $datos); 
         
-        $datos['cart']=$this->cart->contents();
-        $datos['nombreCompleto'] = $this->input->post('nombreCompleto');
-        $datos['rol']= $this->input->post('rol');
-        $datos['adm_id']= $this->input->post('adm_id');
-        $data['title']= 'Chompas de Alpaca';
-        $this->load->view('CarritoCompra.html', $datos);
     }
-    
     
     function verChompas(){
         $data['nombreCompleto'] = $this->input->post('nombreCompleto');
@@ -99,16 +62,7 @@ class ChompasControl extends CI_Controller{
         $datos['rol']= $this->input->post('rol');
         $datos['adm_id']= $this->input->post('adm_id');
         $datos['title']= 'Chompas de Alpaca';
-        $datos['chompasCarrito'] = $this->Chompa->getAll(); 
-        $datos['mensaje']='';
-        $this->load->view('inicio.html', $datos);
-    }
-    function comprar(){
-        
-        $datos['nombreCompleto'] = $this->input->post('nombreCompleto');
-        $datos['rol']= $this->input->post('rol');
-        $datos['adm_id']= $this->input->post('adm_id');
-        $datos['title']= 'Chompas de Alpaca';
+        $datos['chompasCarrito'] = $this->Chompa->getAll();   
         $this->load->view('inicio.html', $datos);
     }
 }

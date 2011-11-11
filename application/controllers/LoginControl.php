@@ -18,8 +18,7 @@ class LoginControl extends CI_Controller{
             $datos['rol']=$user->_rol;
             $datos['adm_id'] = $user->_id;
             $this->load->model('Chompa');
-            $datos['chompasCarrito'] = $this->Chompa->getAll();
-            $data['mensaje']='';
+            $datos['chompasCarrito'] = $this->Chompa->getAll();     
         }
         
         if($login==' ')

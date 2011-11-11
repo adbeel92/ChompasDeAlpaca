@@ -44,8 +44,7 @@
                           <th>Código</th>
                           <th>Nombre</th>
                           <th>Stock Mínimo</th>
-                          <th>Cantidad Actual en Almacén</th>
-                          <th>Unidades por Pedido</th>
+                          <th>Cantidad</th>
                       </tr>
                       <?php foreach($chompas as $item){?>
                       <tr>
@@ -53,7 +52,6 @@
                           <td><?php echo $item->getNombre(); ?></td>
                           <td><?php echo $item->getStockMin(); ?></td>
                           <td><?php echo $item->getStockAct(); ?></td>
-                          <td><?php echo $item->getUnidadesPedido(); ?></td>
                       </tr>
                       <?php }?>
                     </table>
@@ -61,7 +59,7 @@
                         <input type="hidden" name="nombreCompleto" value="<?php echo $nombreCompleto;?>" />
                         <input type="hidden" name="adm_id" value="<?php echo $adm_id;?>" />
                         <input type="hidden" name="rol" value="<?php echo $rol;?>" />
-                        <input id="botonVolver" type="image" src="http://localhost/ChompasDeAlpaca/images/botonVolver.png" value="Volver"/>
+                        <input type="submit" value="Volver"/>
                     </form>
                 </div>
             </div>
