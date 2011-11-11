@@ -44,12 +44,12 @@ CREATE TABLE IF NOT EXISTS `chompas` (
 --
 
 INSERT INTO `chompas` (`id`, `id_insumo`, `nombre`, `precio`, `stock_min`, `stock_actual`, `unidades_pedido`) VALUES
-(1, 1, 'office', '100', 100, 100, 200),
-(2, 2, 'mid season', '120', 80, 80, 100),
-(3, 1, 'holmes', '120', 80, 80, 100),
-(4, 3, 'gigardo', '100', 120, 120, 180),
-(5, 1, 'anton', '110', 100, 100, 150),
-(6, 3, 'l''blanc', '100', 150, 150, 200);
+(1, 1, 'office', '100', 100, 200, 200),
+(2, 2, 'mid season', '120', 80, 160, 100),
+(3, 1, 'holmes', '120', 80, 160, 100),
+(4, 3, 'gigardo', '100', 120, 240, 180),
+(5, 1, 'anton', '110', 100, 200, 150),
+(6, 3, 'l-blanc', '100', 150, 300, 200);
 
 -- --------------------------------------------------------
 
@@ -83,17 +83,12 @@ CREATE TABLE IF NOT EXISTS `pedidos` (
   `id_insumo` int(11) NOT NULL,
   `id_admin` int(11) NOT NULL,
   `fecha` datetime NOT NULL,
+  `detalle` varchar(300) COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_insumo` (`id_insumo`),
   KEY `id_admin` (`id_admin`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
 
---
--- Volcar la base de datos para la tabla `pedidos`
---
-
-INSERT INTO `pedidos` (`id`, `id_insumo`, `id_admin`, `fecha`) VALUES
-(1, 1, 1, '2011-11-09 17:27:07');
 
 -- --------------------------------------------------------
 
