@@ -6,6 +6,8 @@ class ChompasControl extends CI_Controller{
         $this->load->library('Cart');
         $this->load->model('Chompa','',true);
         $this->load->model('Pedido','',true);
+        $this->load->model('Insumo','',true);
+        $this->load->model('Usuario','',true);
     }
 
     function add(){
@@ -43,16 +45,16 @@ class ChompasControl extends CI_Controller{
         }
     }
     function updateCart(){  
+        $this->load->library('Cart');
         $rowid = $this->input->post('rowId');
-        $data['rowid'] = $rowid;
-        $data['qty'] = 0;
+        $data = array('rowid' => $rowid, 'qty' => 0);
         $this->cart->update($data);
         
         $datos['cart']=$this->cart->contents();
         $datos['nombreCompleto'] = $this->input->post('nombreCompleto');
         $datos['rol']= $this->input->post('rol');
         $datos['adm_id']= $this->input->post('adm_id');
-        $data['title']= 'Chompas de Alpaca';
+        $datos['title']= 'Chompas de Alpaca';
         $this->load->view('CarritoCompra.html', $datos);
     }
     function destroy(){  
@@ -62,7 +64,7 @@ class ChompasControl extends CI_Controller{
         $datos['nombreCompleto'] = $this->input->post('nombreCompleto');
         $datos['rol']= $this->input->post('rol');
         $datos['adm_id']= $this->input->post('adm_id');
-        $data['title']= 'Chompas de Alpaca';
+        $datos['title']= 'Chompas de Alpaca';
         $this->load->view('CarritoCompra.html', $datos);
     }
     function verChompas(){
@@ -80,8 +82,11 @@ class ChompasControl extends CI_Controller{
         $data['rol']= $this->input->post('rol');
         $pedidos=$this->Pedido->getAllPedidos();
         $data['adm_id']= $this->input->post('adm_id');
+        $msj = "<p id='msjNo'>No hay Pedidos </p>";
         $data['title']= 'Chompas de Alpaca';
         $data['pedidos']=$pedidos;
+        $data['msj']=$msj;
+        
         $this->load->view('VerPedidos.html',$data);
     }
     function comprar(){
@@ -91,7 +96,8 @@ class ChompasControl extends CI_Controller{
             $chompaFound = $this->Chompa->getChompa($chompaCarrito['id']);
             
             $id = $chompaFound->getId();
-            $insumoId = $chompaFound->getInsumoId();
+            $insumo = $chompaFound->getInsumo();
+            $insumoId = $this->Insumo->getIdByInsumo($insumo);
             $nombre = $chompaFound->getNombre();
             $precio = $chompaFound->getPrecio();
             $stockMin = $chompaFound->getStockMin();
@@ -124,7 +130,32 @@ class ChompasControl extends CI_Controller{
             $this->load->view('RealizarPedido.html', $datos);
         }else
             $this->load->view('inicio.html', $datos);
-                
+    }
+    function realizarPedido(){
+        $id = $this->input->post('id');
+        $insumo = $this->input->post('insumo');
+        $insumoId = $this->Insumo->getIdByInsumo($insumo);
+        $adm = $this->input->post('adm_id');
+        $admId = $this->Usuario->getIdByUsername($adm);
+        $fecha = date("Y-m-d G:i:s");
+        $detalle = $this->input->post('detalle');
+        $unidadesMas = $this->input->post('unitsPedido');
+        
+        $pedido = new Pedido(null, $insumoId, 2, $fecha, $detalle);
+        $this->Pedido->ingresarPedido($pedido);
+        
+        $chompaFound = $this->Chompa->getChompa($id);
+        $id = $chompaFound->getId();
+        $insumo2 = $chompaFound->getInsumo();
+        $insumoId = $this->Insumo->getIdByInsumo($insumo2);
+        $nombre = $chompaFound->getNombre();
+        $precio = $chompaFound->getPrecio();
+        $stockMin = $chompaFound->getStockMin();
+        $stockAct = $chompaFound->getStockAct() + $unidadesMas;
+        $unidadesPedido = $chompaFound->getUnidadesPedido();
+        $chompaToUpdate = new Chompa($id, $insumoId, $nombre, $precio, $stockMin, $stockAct, $unidadesPedido);
+        $this->Chompa->actualizarStockActual($chompaToUpdate);
+        $this->verificarStockActual();
     }
 }
 

@@ -2,16 +2,16 @@
 
 class Chompa extends CI_Model{
     var $_id;
-    var $_insumoId;
+    var $_insumo;
     var $_nombre;
     var $_precio;
     var $_stockMin;
     var $_stockAct;
     var $_unidadesPedido;
-    public function __construct($id="",$insumoId="",$nombre="",$precio="",$stockMin="",$stockAct="",$unidadesPedido="") {
+    public function __construct($id="",$insumo="",$nombre="",$precio="",$stockMin="",$stockAct="",$unidadesPedido="") {
         parent::__construct();
         $this->_id = $id;
-        $this->_insumoId = $insumoId;
+        $this->_insumo = $insumo;
         $this->_nombre = $nombre;
         $this->_precio = $precio;
         $this->_stockMin = $stockMin;
@@ -19,7 +19,7 @@ class Chompa extends CI_Model{
         $this->_unidadesPedido = $unidadesPedido;
     }
     public function getId(){return $this->_id;}
-    public function getInsumoId(){return $this->_insumoId;}
+    public function getInsumo(){return $this->_insumo;}
     public function getNombre(){return $this->_nombre;}
     public function getPrecio(){return $this->_precio;}
     public function getStockMin(){return $this->_stockMin;}
@@ -29,16 +29,23 @@ class Chompa extends CI_Model{
     function getAll(){
         $query = $this->db->get('chompas');
         $lista = $query->result();
+        
+        $this->load->model('Insumo');
+        $listaInsumos = $this->Insumo->getAllInsumos();
+        
         $listaAll=array();
         foreach($lista as $c){
             $id = $c->id;
-            $insumoId = $c->id_insumo;
+            foreach($listaInsumos as $i){
+                if($i->getId() == $c->id_insumo)
+                    $insumo = $i->getNombre();
+            }
             $nombre = $c->nombre;
             $precio = $c->precio;
             $stockMin=$c->stock_min;
             $stockAct=$c->stock_actual;
             $unidadesPedido = $c->unidades_pedido;
-            $listaAll[] = new Chompa($id, $insumoId, $nombre, $precio, $stockMin, $stockAct, $unidadesPedido);
+            $listaAll[] = new Chompa($id, $insumo, $nombre, $precio, $stockMin, $stockAct, $unidadesPedido);
         }
         return $listaAll;
     }
@@ -53,7 +60,7 @@ class Chompa extends CI_Model{
         //$sql = "UPDATE `chompasdb`.`chompas` SET `stock_actual` = \'200\' WHERE `chompas`.`id` = 1;
         $data=array(
             'id'=>$chompa->getId(),
-            'id_insumo'=>$chompa->getInsumoId(),
+            'id_insumo'=>$chompa->getInsumo(),
             'nombre'=>$chompa->getNombre(),
             'precio'=>$chompa->getPrecio(),
             'stock_min'=>$chompa->getStockMin(),

@@ -22,6 +22,14 @@ class Insumo extends CI_Model{
         }
         return $listaInsumos;
     }
+    function getIdByInsumo($nombre){
+        $insumos = $this->getAllInsumos();
+        foreach($insumos as $i){
+            if($i->getNombre() == $nombre)
+                return $i->getId ();
+        }
+        return false;
+    }
     
 }
 

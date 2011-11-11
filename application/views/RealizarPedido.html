@@ -33,26 +33,44 @@
 
                 <div id="main">
                     <h3>Realizar Pedido</h3>
-                    <p> de las siguientes chompas:</p>
-                    <ul>
-                        <?php foreach($chompasHacerPedido as $c){?>
-                        <li><?php echo $c->getNombre();?></li> 
-                        <?php }?>
-                    </ul>
-                    <p>Debe hacer un pedido urgentemente para poder comprar en el simulador de carrito</p>
+                    <p>Debe hacer un pedido urgentemente para poder comprar en el simulador de carrito  de las siguientes chompas:</p>
                     <?php foreach($chompasHacerPedido as $c){?>
-                    <table>
+                    <table id="tablaPedido">
                         <tr>
-                            <td>Chompa: <?php echo $c->getNombre();?></td>
-                            <td>Cantidad a hacer el Pedido: <?php echo $c->getNombre();?></td>
+                            <td class="primFila">Chompa</td>
+                            <td colspan="2"><?php echo $c->getNombre();?></td>
                         </tr>
                         <tr>
-                            <td></td>
-                        </tr>                    
+                            <td class="primFila">Detalle de Stock</td>
+                            <td colspan="2">El stock mínimo es <?php echo $c->getStockMin();?>, y en el 
+                            stock actual hay <?php echo $c->getStockAct();?>. Por ende, se debe hacer un pedido.
+                            <p class="msj">Se solicita <?php echo $c->getUnidadesPedido();?> de material
+                    del tipo "<?php echo $c->getInsumo();?>"</p></td>
+                        </tr>
+                        <tr>
+                            <td class="primFila">Cantidad a hacer el Pedido</td>
+                            <td colspan="2"><?php echo $c->getUnidadesPedido();?></td>
+                        </tr>
+                        <tr>
+                            <td class="tdx" colspan="2"></td>
+                            <td class="tdBotonPedir" align="right">
+                                <form method="post" action="index.php?c=ChompasControl&m=realizarPedido">
+                                    <input type="hidden" name="id" value="<?php echo $c->getId();?>"/>
+                                    <input type="hidden" name="insumo" value="<?php echo $c->getInsumo();?>"/>
+                                    <input type="hidden" name="detalle" value="El pedido se da por haber habido un stock mínimo de <?php echo $c->getStockMin();?>, y un stock actual de <?php echo $c->getStockAct();?>. El pedido es de <?php echo $c->getUnidadesPedido();?> de material del tipo <?php echo $c->getInsumo();?>"/>
+                                    <input type="hidden" name="unitsPedido" value="<?php echo $c->getUnidadesPedido();?>"/>
+                                    <input type="hidden" name="nombreCompleto" value="<?php echo $nombreCompleto;?>" />
+                                    <input type="hidden" name="adm_id" value="<?php echo $adm_id;?>" />
+                                    <input type="hidden" name="rol" value="<?php echo $rol;?>" />
+                                    <input type="submit" value="Realizar Pedido"/>
+                                </form>
+                            </td>
+                        </tr>
                     </table>
                     <?php }?>
                 </div>
             </div>
+            
 	</div>
     </body>
 </html>

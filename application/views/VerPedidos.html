@@ -1,6 +1,6 @@
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title><?php echo $title;?></title>        
         <link href="http://localhost/ChompasDeAlpaca/css/inicio.css" rel="stylesheet" type="text/css" />
     </head>
@@ -34,21 +34,31 @@
                 <div id="main">
                     <h3>Listado de Pedidos</h3>
                     <table id="listadoPedido">
+                        <?php if ($pedidos == null) {?>
+                       <?php echo $msj ?> 
+                        <?php }?>
+                     <?php if ($pedidos != null) {?>
                       <tr>
                           <th>Código</th>
                           <th>Insumo</th>
                           <th>Fecha</th>
                           <th>Detalle</th>
                       </tr>
+                     
+                      
                       <?php foreach($pedidos as $item){?>
                       <tr>
-                          <td><?php echo $item->getId(); ?></td>
-                          <td><?php echo $item->getInsumo(); ?></td>
-                          <td><?php echo $item->getFecha(); ?></td>
-                          <td><?php echo $item->getDetalle(); ?></td>
+                          <td><?php echo $item->getId();?>     </td>
+                          <td><?php echo $item->getInsumo();?> </td>
+                          <td><?php echo $item->getFecha();?>  </td>
+                          <td><?php echo $item->getDetalle();?></td>
                       </tr>
                       <?php }?>
                     </table>
+                     <?php }?>
+                     
+                     
+                     
                     <form method="Post" action="index.php?c=ChompasControl&m=verificarStockActual">
                         <input type="hidden" name="nombreCompleto" value="<?php echo $nombreCompleto;?>" />
                         <input type="hidden" name="adm_id" value="<?php echo $adm_id;?>" />

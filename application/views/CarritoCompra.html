@@ -47,7 +47,7 @@
                             <td align="right"><?php echo $chompa['subtotal'] ?></td>
                             <td align="center" class="tdRetirarCarrito">
                                 <form method="post" action="index.php?c=ChompasControl&m=updateCart">
-                                    <input type="hidden" name="rowId" value="<?php echo $chompa['id'] ?>"/>
+                                    <input type="hidden" name="rowId" value="<?php echo $chompa['rowid'] ?>"/>
                                     <input type="hidden" name="nombreCompleto" value="<?php echo $nombreCompleto;?>" />
                                     <input type="hidden" name="adm_id" value="<?php echo $adm_id;?>" />
                                     <input type="hidden" name="rol" value="<?php echo $rol;?>" />
@@ -55,7 +55,7 @@
                                 </form>
                             </td>
                         </tr>
-                        <?php } ?>	
+                        <?php } ?>
                         <tr>
                             <td colspan="3">Total</td>
                             <td align="right"><?php echo $this->cart->total(); ?></td>

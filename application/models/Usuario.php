@@ -59,7 +59,15 @@ class Usuario extends CI_Model{
         }else
             return "El usuario no existe.";
     }
-
+    function getIdByUsername($username){
+        $users = $this->getAllUsuarios();
+        foreach ($users as $u){
+            if($u->getUsername() == $username){
+                print_r($u);
+                return $u;
+            }
+        }
+        return false;
+    }
 }
-
 ?>

@@ -37,6 +37,7 @@
                       <tr>
                           <th>Código</th>
                           <th>Nombre</th>
+                          <th>Insumo</th>
                           <th>Stock Mínimo</th>
                           <th>Cantidad Actual en Almacén</th>
                           <th>Unidades por Pedido</th>
@@ -45,6 +46,7 @@
                       <tr>
                           <td><?php echo $item->getId(); ?></td>
                           <td><?php echo $item->getNombre(); ?></td>
+                          <td><?php echo $item->getInsumo(); ?></td>
                           <td><?php echo $item->getStockMin(); ?></td>
                           <td><?php echo $item->getStockAct(); ?></td>
                           <td><?php echo $item->getUnidadesPedido(); ?></td>
