@@ -11,7 +11,17 @@ class Insumo extends CI_Model{
     public function getId(){return $this->_id;}
     public function getNombre(){return $this->_nombre;}
     
-    
+    function getAllInsumos(){
+        $query = $this->db->get('insumos');
+        $lista = $query->result();
+        $listaInsumos = array();
+        foreach($lista as $insumo){
+            $id = $insumo->id;
+            $nombre=$insumo->nombre;
+            $listaInsumos[] = new Insumo($id, $nombre);
+        }
+        return $listaInsumos;
+    }
     
 }
 

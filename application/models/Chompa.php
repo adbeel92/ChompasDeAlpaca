@@ -21,6 +21,7 @@ class Chompa extends CI_Model{
     public function getId(){return $this->_id;}
     public function getInsumoId(){return $this->_insumoId;}
     public function getNombre(){return $this->_nombre;}
+    public function getPrecio(){return $this->_precio;}
     public function getStockMin(){return $this->_stockMin;}
     public function getStockAct(){return $this->_stockAct;}
     public function getUnidadesPedido(){return $this->_unidadesPedido;}
@@ -48,7 +49,20 @@ class Chompa extends CI_Model{
                 return $c;
         }
     }
-    
+    function actualizarStockActual(Chompa $chompa){
+        //$sql = "UPDATE `chompasdb`.`chompas` SET `stock_actual` = \'200\' WHERE `chompas`.`id` = 1;
+        $data=array(
+            'id'=>$chompa->getId(),
+            'id_insumo'=>$chompa->getInsumoId(),
+            'nombre'=>$chompa->getNombre(),
+            'precio'=>$chompa->getPrecio(),
+            'stock_min'=>$chompa->getStockMin(),
+            'stock_actual'=>$chompa->getStockAct(),
+            'unidades_pedido'=>$chompa->getUnidadesPedido()
+        );
+        $this->db->where('id',$chompa->getId());
+        $this->db->update('chompas',$data);
+    }
     
 }
 
